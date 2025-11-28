@@ -1,0 +1,244 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1; /* pousse le footer en bas si le contenu est petit */
+}
+
+a { text-decoration: none; color: inherit; }
+
+/* -------------------- Section projets -------------------- */
+.projet-section {
+    padding: 40px 5%;
+}
+
+.projet-section h2 {
+    font-size: 32px;
+    margin-bottom: 25px;
+}
+
+/* Grid responsive */
+.grid-projets {
+    display: grid;
+    gap: 25px;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* -------------------- Carte projet -------------------- */
+.carte {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.carte:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 25px rgba(0,0,0,0.12);
+}
+
+.carte img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.carte-content {
+    padding: 15px;
+}
+
+.carte-content h3 {
+    font-size: 20px;
+    margin: 0 0 10px 0;
+}
+
+/* -------------------- Page projet -------------------- */
+/* --- Layout principal --- */
+.projet-detail {
+    max-width: 900px;
+    margin: 80px auto;
+    padding: 30px;
+    text-align: center;
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+.projet-detail h1 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+/* --- Wrapper --- */
+.projet-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* --- Image stylée --- */
+.projet-image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.projet-image {
+    width: 100%;
+    max-width: 850px;
+    border-radius: 18px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.17);
+    transition: transform 0.4s ease;
+}
+
+.projet-image:hover {
+    transform: scale(1.02);
+}
+
+/* --- Description --- */
+.projet-description {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+    text-align: left;
+    padding: 10px 5px;
+}
+
+.projet-date {
+    margin-top: 20px;
+    color: #777;
+    font-size: 0.95rem;
+}
+
+/* --- Bouton retour --- */
+.btn-retour {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 12px 25px;
+    background: #111;
+    color: #fff;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 600;
+}
+
+.btn-retour:hover {
+    background: #333;
+    transform: translateY(-2px);
+}
+
+/* --- Responsive mobile --- */
+@media (max-width: 768px) {
+    .projet-description {
+        text-align: center;
+    }
+}
+
+/* --- Animations --- */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease-out forwards;
+}
+
+.fade-up-delay {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeUp 0.7s ease-out forwards;
+}
+
+.fade-up-delay2 {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* -------------------- Header -------------------- */
+.menu {
+    background: white;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+.menu-container {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+/*nav a {
+    margin-left: 20px;
+    font-size: 16px;
+    color: #374151;
+}
+
+nav a:hover {
+    color: #111827;
+}
+
+nav .active {
+    font-weight: bold;
+    color: #2563eb;
+}*/
+
+/* -------------------- Footer -------------------- */
+.site-footer {
+    text-align: center;
+    padding: 20px 10px;
+    color: #6b7280;
+    font-size: 15px;
+    margin-top: 50px;
+}
+
+/* Boutons navigation */
+nav a.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+nav a.btn-secondary {
+    background: #6b7280;
+    color: white;
+}
+
+nav a.btn-secondary:hover {
+    background: #4b5563;
+}
+
+nav a.btn-primary {
+    background: #2563eb;
+    color: white;
+}
+
+nav a.btn-primary:hover {
+    background: #1d4ed8;
+}
